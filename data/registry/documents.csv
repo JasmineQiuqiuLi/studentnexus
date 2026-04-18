@@ -1,0 +1,50 @@
+doc_id	source_type	source_name	url	topic	Last Reviewed/Updated	date captured
+gov_001	gov	uscis	https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students	opt	11/25/2024	4/18/2026
+gov_002	gov	uscis	https://www.uscis.gov/i-765	i765	4/13/2026	4/18/2026
+gov_003	gov	uscis	https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/students-and-employment	employment	11/20/2025	4/18/2026
+gov_004	gov	uscis	https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-extension-for-stem-students-stem-opt	stem opt	1/30/2026	4/18/2026
+gov_005	gov	uscis	https://www.uscis.gov/policy-manual/volume-2-part-f-chapter-5	Practical Training	2/1/2026	4/18/2026
+gov_006	gov	uscis	https://www.uscis.gov/working-in-the-united-states/h-1b-specialty-occupations	h1b	3/31/2026	4/18/2026
+gov_007	gov	dol	https://www.dol.gov/agencies/whd/immigration/h1b	h1b	-	4/18/2026
+gov_008	gov	dhs	https://studyinthestates.dhs.gov/students/prepare/students-and-the-form-i-20	i20	-	4/18/2026
+gov_009	gov	dhs	https://studyinthestates.dhs.gov/schools/apply/getting-started-with-sevp-certification	sevp	-	4/18/2026
+gov_010	gov	uscis	https://www.uscis.gov/forms/all-forms/how-do-i-request-premium-processing	premium processing	3/23/2026	4/18/2026
+gov_011	gov	ice	https://www.ice.gov/sevis/students	students		4/18/2026
+gov_012	gov	dhs	https://studyinthestates.dhs.gov/sevp-portal-help/maintain-information/opt-student-reporting-requirements	opt reporting		4/18/2026
+gov_013	gov	dhs	https://studyinthestates.dhs.gov/sevis-help-hub/student-records/fm-student-employment/unemployment-counter	unemployment		4/18/2026
+gov_014	gov	dhs	https://studyinthestates.dhs.gov/students/maintaining-status	maintaining status		4/18/2026
+gov_015	gov	dhs	https://studyinthestates.dhs.gov/students/study/traveling-as-an-international-student	traveling		4/18/2026
+uni_001	uni	columbia	https://isso.columbia.edu/content/f-1-opt-optional-practical-training-during-your-degree-program	opt		4/18/2026
+uni_002	uni	columbia	https://isso.columbia.edu/content/travel-signatures-and-i-20ds-2019-reprints-f-and-j-students	i20 traveling		4/18/2026
+uni_003	uni	columbia	https://isso.columbia.edu/content/documents-needed-travel-student	traveling		4/18/2026
+uni_004	uni	columbia	https://isso.columbia.edu/content/travel-during-f-1-opt	traveling		4/18/2026
+uni_005	uni	columbia	https://isso.columbia.edu/content/campus-work-f-and-j-students	campus work		4/18/2026
+uni_006	uni	columbia	https://isso.columbia.edu/content/f-1-cpt-curricular-practical-training	cpt		4/18/2026
+uni_007	uni	columbia	https://isso.columbia.edu/content/unpaid-internships-and-volunteering	unpaid		4/18/2026
+uni_008	uni	columbia	https://isso.columbia.edu/content/f-1-opt-optional-practical-training-during-your-degree-program	pre opt		4/18/2026
+uni_009	uni	columbia	https://isso.columbia.edu/content/f-1-opt-optional-practical-training-after-your-degree-program	post opt		4/18/2026
+uni_010	uni	columbia	https://isso.columbia.edu/content/f-1-stem-opt-extension	opt extension		4/18/2026
+uni_011	uni	columbia	https://isso.columbia.edu/content/opt-reporting	opt reporting		4/18/2026
+uni_012	uni	columbia	https://isso.columbia.edu/content/stem-opt-reporting	stem opt reporting		4/18/2026
+uni_013	uni	columbia	https://isso.columbia.edu/content/cap-gap-opt-extension	opt extension		4/18/2026
+uni_014	uni	berkeley	https://internationaloffice.berkeley.edu/immigration/entry-us-travel-and-re-entry	traveling entry		4/18/2026
+uni_015	uni	berkeley	https://internationaloffice.berkeley.edu/students/employment/oncampus	on campus employment		4/18/2026
+uni_016	uni	berkeley	https://internationaloffice.berkeley.edu/students/employment/cpt	cpt		4/18/2026
+uni_019	uni	berkeley	https://internationaloffice.berkeley.edu/students/employment/stemopt	stem opt		4/18/2026
+uni_020	uni	berkeley	https://internationaloffice.berkeley.edu/students/employment/special-employment-authorizations	employment		4/18/2026
+uni_021	uni	berkeley	https://internationaloffice.berkeley.edu/students/employment/cap-gap	cap gap		4/18/2026
+uni_022	uni	berkeley	https://internationaloffice.berkeley.edu/h-1b_faqs	h1b		4/18/2026
+uni_023	uni	njit	https://www.njit.edu/global/visa-information-application-process	visa		4/18/2026
+uni_024	uni	njit	https://www.njit.edu/global/full-time-enrollment-and-full-time-certification	enrollment certification		4/18/2026
+uni_025	uni	njit	https://www.njit.edu/global/changeofstatus	change of status		4/18/2026
+uni_026	uni	njit	https://www.njit.edu/global/f1reinstatement	f1 reinstatement		4/18/2026
+uni_027	uni	njit	https://www.njit.edu/global/employment-f-1-students	employment		4/18/2026
+uni_028	uni	njit	https://www.njit.edu/global/optional-practical-training	opt		4/18/2026
+uni_029	uni	njit	https://www.njit.edu/global/curricular-practical-training	cpt		4/18/2026
+uni_030	uni	njit	https://www.njit.edu/global/stem-opt-extension	stem extension		4/18/2026
+uni_031	uni	njit	https://www.njit.edu/global/opt-reporting	opt reporting		4/18/2026
+uni_032	uni	njit	https://www.njit.edu/global/opt-employment-volunteering	volunteer unpaid		4/18/2026
+uni_033	uni	njit	https://www.njit.edu/global/H1B	h1b		4/18/2026
+uni_034	uni	njit	https://www.njit.edu/global/internship-international-organization	internship		4/18/2026
+uni_035	uni	njit	https://www.njit.edu/global/economic-hardship	economic hardship		4/18/2026
+uni_036	uni	njit	https://www.njit.edu/global/replacement-ead	ead		4/18/2026
