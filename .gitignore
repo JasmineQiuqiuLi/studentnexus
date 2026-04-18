@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+__pycache__/
+.env
+
+# real env files
+.env
+.env.*
+!.env.example
+
+# local envs
+.env.local
+.env.development.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Local databases
+*.db
+*.sqlite3
+
+# # Data files (optional raw/private data)
+# data/raw/
+# data/temp/
+# data/cache/
+
+# Model artifacts
+models/
+checkpoints/
+
+# Node (if frontend later)
+node_modules/
+.next/
