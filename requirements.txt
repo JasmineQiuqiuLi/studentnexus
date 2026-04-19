@@ -7,3 +7,8 @@ python-dotenv
 pgvector
 pytest
 markdown
+pandas 
+requests
+beautifulsoup4
+trafilatura
+playwright
