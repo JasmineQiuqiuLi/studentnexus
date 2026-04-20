@@ -1,0 +1,51 @@
+## Students and the Form I-20
+
+All F and M students that study in the United States need a [Form I-20, “Certificate of Eligibility for Nonimmigrant Student Status.”](http://studyinthestates.dhs.gov/student-forms?form=Forms_I-20) Once accepted into a [Student and Exchange Visitor Program (SEVP)-certified school](http://studyinthestates.dhs.gov/school-search), nonimmigrant students will receive a Form I-20 from their [designated school official (DSO)](/node/333484).
+
+You must also obtain a Form I-20 for any eligible dependents you plan to bring to the United States with you. However, please note that the name (i.e., Academic and Language students vs. Vocational Students) on the Form I-20 an SEVP-certified school issues you will dictate the type of student visa you may obtain from the U.S. Department of State and the status you will need to maintain in the United States. You and your DSO must both sign the Form I-20. If you are under age 18, your parents must sign the Form I-20 for you.
+
+### Form I-20 Uses
+
+The Form I-20 is an important document that you should keep safe, as you will need it throughout the F and M student life cycle.
+
+#### Paying the I-901 SEVIS Fee
+
+Before you pay the I-901 Student and [Exchange Visitor](https://studyinthestates.dhs.gov/glossary/E/#Exchange Visitor) Information System (SEVIS) Fee, you must receive the Form I-20 from a DSO at the school you plan to attend. You will need information from the Form I-20 to pay the fee. The [I-901 SEVIS Fee](https://studyinthestates.dhs.gov/glossary/I/#I-901 SEVIS Fee) is mandatory and must be paid before you enter the United States.
+
+In order to pay the I-901 SEVIS fee, all prospective F and M students will need to provide their:
+
+- Name, address, date of birth and email address.
+- Country of birth and country of citizenship.
+- School Code as listed on the Form I-20 “Certificate of Eligibility for Nonimmigrant Student Status.”
+- SEVIS Identification Number as listed on the Form I-20.
+
+#### Applying for a nonimmigrant visa
+
+The Form I-20 lists your program start date, 30 days before which you are allowed to enter the United States. [F-1 and M-1 student visas](https://travel.state.gov/content/travel/en/us-visas/study.html) can be issued up to 365 days in advance of your course of study start date. Your type of student visa must match the type of Form I-20 you have (e.g., F-1 or M-1). You are expected to have the original Form I-20 at your visa interview. The consular officer may accept a copy of the Form I-20 in limited circumstances that warrant visa issuance prior to you receiving the original Form I-20.
+
+#### Entering the United States
+
+You are expected to have the signed Form I-20 on hand as you enter the country. Do not pack it away in your suitcase. A [U.S. Customs and Border Protection](http://studyinthestates.dhs.gov/about/cbp) officer will instruct you to present your Form I-20 at the [port of entry](/node/333530). You may arrive up to 30 days before the start date listed on your Form I-20; or
+
+#### Changing status to F or M while in the United States
+
+You need a Form I-20 if you are already in the United States as another type of nonimmigrant and you are applying to USCIS to change your status to F or M.
+
+#### Applying for benefits
+
+Your Form I-20 proves that you are legally enrolled in a program of study in the United States. Therefore, it may be needed when you apply for the benefits available to F and M students. If you are eligible to apply for a [driver’s license](http://studyinthestates.dhs.gov/students/resources/driving) or a [social security number](http://studyinthestates.dhs.gov/students/resources/social-security-number), remember to bring your Form I-20 with you.
+
+### When to Get a New Form I-20
+
+After receiving the initial Form I-20 upon program acceptance, students may receive a new Form I-20 from their DSO in the following circumstances:
+
+- If the physical copy of the form is destroyed or misplaced.
+- For travel endorsement.
+- When the student’s SEVIS status changes (e.g., from Initial to Active).
+- For any substantive change to student information, such as changes to a student’s personal information, program of study, optional practical training, etc.
+
+### Redesigned Form I-20
+
+As of July 1, 2016, the [redesigned](https://studyinthestates.dhs.gov/2015/08/students-learn-how-the-redesigned-form-i-20-affects-you) [Form I-20](/sevis-help-hub/student-records/sample-form-i-20) is required for all F and M nonimmigrant visa applications, entry into the United States, travel and applications for nonimmigrant benefits. The previous version of the Form I-20 (with a barcode) is now invalid. Students please note that your DSOs were responsible for providing an updated, hard copy of the Form I-20 with original signatures to all F-1 and M-1 students at their schools.
+
+Related Tags: [Form I-20](/filter?filter=31)

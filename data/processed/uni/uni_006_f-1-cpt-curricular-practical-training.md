@@ -41,10 +41,8 @@ If you have questions please consult with your department or school.
 
 Review the table below for a visual:
 
-| During Summer Vacation | During Fall /Spring Semester | |
-|---|---|---|
-| Part-time | ✓ Yes. It islimitedto part-time if your program has a required summer term OR summer is your final term. | ✓ Yes |
-| Full-time | ✓ Yes, but only if you will be continuing in the Fall. | No |
+- During Summer Vacation: Part-time | During Fall /Spring Semester: ✓ Yes. It islimitedto part-time if your program has a required summer term OR summer is your final term. | : ✓ Yes
+- During Summer Vacation: Full-time | During Fall /Spring Semester: ✓ Yes, but only if you will be continuing in the Fall. | : No
 
 ### CPT Dates
 

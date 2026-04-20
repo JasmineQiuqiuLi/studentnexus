@@ -44,9 +44,7 @@ ISSO-Morningside
 [F-1 Students](https://compass.isso.columbia.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormExtendedOnCampusEmploymentLetterRequestDraft0ServiceProvider)- ISSO-CUIMC
 [F-1 Students](https://compass.isso.columbia.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormExtendedOnCampusEmploymentLetterRequest0ServiceProvider)
 
-| ISSO-Morningside | ISSO-CUIMC |
-|---|---|
-| F-1 Students | F-1 Students |
+- ISSO-Morningside: F-1 Students | ISSO-CUIMC: F-1 Students
 
 J-1 students must submit a mandatory request for ISSO authorization. See "For J-1 Students only" section below.
 
@@ -60,9 +58,7 @@ J-1 exchange visitor regulations require sponsor authorization of on-campus empl
 [J-1 Students](https://compass.isso.columbia.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormJ1StudentCategoryOnCampusEmploymentAuthorizationRequestColumbia0ServiceProvider&menuFlag=true)- ISSO CU Medical Center (CUIMC)
 [J-1 Students](https://compass.isso.columbia.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormOnCampusEmploymentReportForm0ServiceProvider&menuFlag=true)
 
-| ISSO Morningside | ISSO CU Medical Center (CUIMC) |
-|---|---|
-| J-1 Students | J-1 Students |
+- ISSO Morningside: J-1 Students | ISSO CU Medical Center (CUIMC): J-1 Students
 
 **Not sure of your campus?** Check our [campus school list](https://isso.columbia.edu/content/schools-columbia-campuses).
 

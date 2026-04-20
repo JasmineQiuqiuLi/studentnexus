@@ -86,9 +86,7 @@ Please click the appropriate link below:
 [F-1 Students](https://compass.isso.columbia.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormF1OPTCAPGAPI20Request0ServiceProvider&menuFlag=true)- ISSO-CUIMC
 [F-1 Students](https://compass.isso.columbia.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormF1OPTCapGapI20RequestColumbia1520170ServiceProvider&menuFlag=true)
 
-| ISSO Morningside | ISSO-CUIMC |
-|---|---|
-| F-1 Students | F-1 Students |
+- ISSO Morningside: F-1 Students | ISSO-CUIMC: F-1 Students
 
 **Not sure of your campus? **Check our [campus school list](https://isso.columbia.edu/content/schools-columbia-campuses).
 

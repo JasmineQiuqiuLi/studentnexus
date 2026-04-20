@@ -58,11 +58,9 @@ See below for how long your travel signature is valid:
 - A travel signature on page one on your DS-2019 is valid for
 **12 months**or until the end date on your DS-2019, whichever is earlier.
 
-| Student | Validity / Length |
-|---|---|
-| Enrolled F-1 student (I-20) | A travel signature on page 2 of your I-20 is valid for12monthsor until the program end date on the I-20, whichever comes first. |
-| F-1 Post-completion and STEM OPT student (I-20) | A travel signature on page 2 of your I-20 is valid for6 monthsor until the expiration date of the EAD, whichever comes first. |
-| J-1 Student (DS-2019) | A travel signature on page one on your DS-2019 is valid for12 monthsor until the end date on your DS-2019, whichever is earlier. |
+- Student: Enrolled F-1 student (I-20) | Validity / Length: A travel signature on page 2 of your I-20 is valid for12monthsor until the program end date on the I-20, whichever comes first.
+- Student: F-1 Post-completion and STEM OPT student (I-20) | Validity / Length: A travel signature on page 2 of your I-20 is valid for6 monthsor until the expiration date of the EAD, whichever comes first.
+- Student: J-1 Student (DS-2019) | Validity / Length: A travel signature on page one on your DS-2019 is valid for12 monthsor until the end date on your DS-2019, whichever is earlier.
 
 Follow the instructions below for a new travel signature by logging in to Compass to [request an I-20/DS-2019 reprint](#/text-14900).
 
@@ -110,10 +108,8 @@ If you have F-2/J-2 dependents, we will automatically process reprints of their 
 [J-1 Students](https://compass.isso.columbia.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormRequestNewDS2019withTravelSignature0ServiceProvider&menuFlag=true)- ISSO Medical Campus (CUIMC)
 [J-1 Students](https://compass.isso.columbia.edu/istart/controllers/client/ClientEngine.cfm?serviceid=EFormDS2019TravelSignatureandReprintRequest0ServiceProvider&menuFlag=true)
 
-| ISSO Morningside | ISSO Medical Campus (CUIMC) |
-|---|---|
-| F-1 Students | F-1 Students |
-| J-1 Students | J-1 Students |
+- ISSO Morningside: F-1 Students | ISSO Medical Campus (CUIMC): F-1 Students
+- ISSO Morningside: J-1 Students | ISSO Medical Campus (CUIMC): J-1 Students
 
 **Not sure of your campus?** Check our [campus school list](https://isso.columbia.edu/content/schools-columbia-campuses).
 
@@ -136,9 +132,7 @@ Monday to Friday, 8 a.m. - 11 a.m.
 
 NWKi94corrections@cbp.dhs.gov
 
-| JFK Airport | Newark Airport |
-|---|---|
-| (718) 553-3683 or (718) 553- 3684Monday to Thursday, 9 a.m. - 2 p.m.jfkI94corrections@cbp.dhs.gov | (973) 565-8000, ext. 8010 or 8011Monday to Friday, 8 a.m. - 11 a.m.NWKi94corrections@cbp.dhs.gov |
+- JFK Airport: (718) 553-3683 or (718) 553- 3684Monday to Thursday, 9 a.m. - 2 p.m.jfkI94corrections@cbp.dhs.gov | Newark Airport: (973) 565-8000, ext. 8010 or 8011Monday to Friday, 8 a.m. - 11 a.m.NWKi94corrections@cbp.dhs.gov
 
 ## We will email you when the I-20/DS-2019 reprint is ready
 

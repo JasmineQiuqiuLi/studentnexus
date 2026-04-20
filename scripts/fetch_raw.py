@@ -1,13 +1,12 @@
 import pandas as pd
 import requests
 from datetime import datetime
-import trafilatura
 from path import RAW_DIR, REGISTRY_DIR, LOG_DIR, CLEANED_DIR
 from log_error import log_error
 from playwright.sync_api import sync_playwright
 
 csv_path=REGISTRY_DIR / "documents.csv"
-log_path=LOG_DIR / f"{datetime.now().strftime('%Y-%m-%d')}.csv"
+log_path=LOG_DIR / f"fetch_raw_{datetime.now().strftime('%Y-%m-%d')}.csv"
 
 def download_html(url, raw_path, timeout=20):
     """
@@ -87,34 +86,36 @@ for index, row in df.iterrows():
     source_type=row['source_type']
 
     raw_dir=RAW_DIR / source_type
-    cleaned_dir=CLEANED_DIR / source_type
+    # cleaned_dir=CLEANED_DIR / source_type
 
     raw_dir.mkdir(parents=True, exist_ok=True)
-    cleaned_dir.mkdir(parents=True, exist_ok=True)
+    # cleaned_dir.mkdir(parents=True, exist_ok=True)
 
     raw_path=raw_dir / f"{doc_id}_{last_part}.html"
-    cleaned_path=cleaned_dir / f"{doc_id}_{last_part}.md"
+    # cleaned_path=cleaned_dir / f"{doc_id}_{last_part}.md"
 
     try:
         
         html=download_html(url, raw_path)
 
-        extracted=trafilatura.extract(
-            html, 
-            output_format='markdown',
-            include_links=True,
-            include_tables=True
-        )
+        # the content extraction is more complicated and will be done in a separate step, so we just save the raw HTML for now.
 
-        if extracted:
-            cleaned_path.write_text(extracted, encoding='utf-8')
-            df.loc[index,'status']='processed'
-        else:
-            df.loc[index,'status']='no content extracted'
-            log_error(log_path, url, ValueError("No content extracted"))
+        #extracted=trafilatura.extract(
+        #     html, 
+        #     output_format='markdown',
+        #     include_links=True,
+        #     include_tables=True
+        # )
+
+        #if extracted:
+            #cleaned_path.write_text(extracted, encoding='utf-8')
+            # df.loc[index,'status']='processed'
+        # else:
+        #     df.loc[index,'status']='no content extracted'
+        #     log_error(log_path, url, ValueError("No content extracted"))
 
         df.loc[index,'filepath_raw']=str(raw_path)
-        df.loc[index,'filepath_cleaned']=str(cleaned_path)
+        # df.loc[index,'filepath_cleaned']=str(cleaned_path)
         df.loc[index,'last_updated']=datetime.now().isoformat()
 
     except requests.exceptions.RequestException as e:

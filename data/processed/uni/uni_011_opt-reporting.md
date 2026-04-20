@@ -19,16 +19,14 @@ Example: *I work as a** job title** for **employer name.** My duties include **l
 
 ### Types of employment allowed
 
-| Type | Description |
-|---|---|
-| Paid employment | You must work at least 20 hours per week when on post-completion OPT. |
-| Unpaid employment | Unpaid work must be at least 20 hours per week and the work cannot violate any labor laws. Learn more about this on ourunpaid internships and volunteering webpageBe prepared to provide evidence from the employer that you worked at least 20 hours per week during the period of employment.Please note:STEM OPT extensionrequires paid employment |
-| Remote employment | OPT is work authorization in the U.S. for a U.S. based employer. That being said, we have seen U.S. employers allow or require for F-1 OPT students to work remotely. If traveling internationally while working remotely, entry into the US is always up to Customs and Border Protection. As such, ensure you consider that the longer you are outside the U.S., the more scrutinized your entry may potentially be. |
-| Multiple employers | You may work for more than one employer, concurrently or one at a time. All employment must be related to your degree program. |
-| Short-term multiple employers | Musicians and other performing artists should maintain a list of all "gigs", the dates and duration. If requested by DHS, you must be prepared to provide evidence showing a list of all gigs. |
-| Employment through an agency or consulting firm | Also known as employment, temp, or staffing agencies. You are required to average at least 20 hours/week at the location where you are placed. |
-| Self-employed business owner | You must be able to prove that you have the proper business license and that the business is related to your degree program. You may need to consult an attorney. |
-| Independent contractor/ free-lance | If requested by DHS, be prepared to provide evidence showing the duration of the contract periods and the name and address of the contracting company. |
+- Type: Paid employment | Description: You must work at least 20 hours per week when on post-completion OPT.
+- Type: Unpaid employment | Description: Unpaid work must be at least 20 hours per week and the work cannot violate any labor laws. Learn more about this on ourunpaid internships and volunteering webpageBe prepared to provide evidence from the employer that you worked at least 20 hours per week during the period of employment.Please note:STEM OPT extensionrequires paid employment
+- Type: Remote employment | Description: OPT is work authorization in the U.S. for a U.S. based employer. That being said, we have seen U.S. employers allow or require for F-1 OPT students to work remotely. If traveling internationally while working remotely, entry into the US is always up to Customs and Border Protection. As such, ensure you consider that the longer you are outside the U.S., the more scrutinized your entry may potentially be.
+- Type: Multiple employers | Description: You may work for more than one employer, concurrently or one at a time. All employment must be related to your degree program.
+- Type: Short-term multiple employers | Description: Musicians and other performing artists should maintain a list of all "gigs", the dates and duration. If requested by DHS, you must be prepared to provide evidence showing a list of all gigs.
+- Type: Employment through an agency or consulting firm | Description: Also known as employment, temp, or staffing agencies. You are required to average at least 20 hours/week at the location where you are placed.
+- Type: Self-employed business owner | Description: You must be able to prove that you have the proper business license and that the business is related to your degree program. You may need to consult an attorney.
+- Type: Independent contractor/ free-lance | Description: If requested by DHS, be prepared to provide evidence showing the duration of the contract periods and the name and address of the contracting company.
 
 ## Reporting Requirements During Post-Completion OPT
 

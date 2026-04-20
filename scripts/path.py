@@ -24,6 +24,8 @@ REGISTRY_DIR = DATA_DIR / "registry"
 RAW_DIR = DATA_DIR / "raw"
 LOG_DIR = ROOT_DIR / "logs"
 CLEANED_DIR = DATA_DIR / "cleaned"
+PROCESSED_DIR = DATA_DIR / "processed"
+CHUNKED_DIR = DATA_DIR / "chunked"
 
-for p in [DATA_DIR, REGISTRY_DIR, RAW_DIR, LOG_DIR, CLEANED_DIR]:
+for p in [DATA_DIR, REGISTRY_DIR, RAW_DIR, LOG_DIR, CLEANED_DIR, PROCESSED_DIR]:
     p.mkdir(parents=True, exist_ok=True)

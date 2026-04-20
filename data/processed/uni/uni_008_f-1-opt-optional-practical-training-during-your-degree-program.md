@@ -98,9 +98,7 @@ These are the documents you will upload when you log in to Compass to submit you
 
 Please click the appropriate link below:
 
-| ISSO Morningside | ISSO-CUIMC |
-|---|---|
-| F-1 Students | F-1 Students |
+- ISSO Morningside: F-1 Students | ISSO-CUIMC: F-1 Students
 
 **Not sure of your campus?** Check our [campus school list](https://isso.columbia.edu/content/schools-columbia-campuses).**Need help using Compass?** Learn more on our [Compass User Guide](https://isso.columbia.edu/content/compass-user-guide).
 
