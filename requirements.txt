@@ -14,3 +14,6 @@ trafilatura
 playwright
 notebook
 matplotlib
+psycopg2-binary 
+sqlalchemy
+sentence_transformers
