@@ -13,3 +13,4 @@ beautifulsoup4
 trafilatura
 playwright
 notebook
+matplotlib
