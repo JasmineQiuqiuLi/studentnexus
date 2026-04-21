@@ -1,8 +1,8 @@
 import re
 import pandas as pd
 from pathlib import Path
-from path import REGISTRY_DIR, LOG_DIR, CHUNKED_DIR, PROCESSED_DIR,DATA_DIR
-from log_error import log_error
+from scripts.path import REGISTRY_DIR, LOG_DIR, CHUNKED_DIR
+from scripts.log_error import log_error
 from datetime import datetime
 import time
 

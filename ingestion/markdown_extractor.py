@@ -4,8 +4,8 @@ import trafilatura
 from pathlib import Path
 from datetime import datetime
 import pandas as pd
-from path import REGISTRY_DIR, LOG_DIR, CLEANED_DIR
-from log_error import log_error
+from scripts.path import REGISTRY_DIR, LOG_DIR, CLEANED_DIR
+from scripts.log_error import log_error
 import re
 
 

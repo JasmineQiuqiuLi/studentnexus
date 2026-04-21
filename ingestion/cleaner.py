@@ -1,5 +1,5 @@
-from path import REGISTRY_DIR, LOG_DIR, PROCESSED_DIR, CLEANED_DIR
-from log_error import log_error
+from scripts.path import REGISTRY_DIR, LOG_DIR, PROCESSED_DIR, CLEANED_DIR
+from scripts.log_error import log_error
 import pandas as pd
 from datetime import datetime
 import re

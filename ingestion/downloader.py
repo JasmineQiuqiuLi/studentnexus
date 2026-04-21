@@ -1,8 +1,8 @@
 import pandas as pd
 import requests
 from datetime import datetime
-from path import RAW_DIR, REGISTRY_DIR, LOG_DIR, CLEANED_DIR
-from log_error import log_error
+from scripts.path import RAW_DIR, REGISTRY_DIR, LOG_DIR
+from scripts.log_error import log_error
 from playwright.sync_api import sync_playwright
 
 csv_path=REGISTRY_DIR / "documents.csv"

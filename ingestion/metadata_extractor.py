@@ -2,8 +2,8 @@ import re
 from bs4 import BeautifulSoup
 from pathlib import Path
 import pandas as pd
-from path import REGISTRY_DIR, LOG_DIR
-from log_error import log_error
+from scripts.path import REGISTRY_DIR, LOG_DIR
+from scripts.log_error import log_error
 from datetime import datetime
 
 log_path=LOG_DIR / f"extract_metadata_{datetime.now().strftime('%Y-%m-%d')}.csv"
