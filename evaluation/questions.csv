@@ -1,0 +1,96 @@
+query,category,difficulty
+What is OPT?,OPT,easy
+Who is eligible for OPT?,OPT,easy
+How many months of OPT can I get?,OPT,easy
+Can I apply for OPT before graduation?,OPT,easy
+Can I apply for OPT after graduation?,OPT,easy
+When should I apply for post-completion OPT?,OPT,medium
+How long does OPT approval usually take?,OPT,medium
+Do I need a job offer before applying for OPT?,OPT,easy
+Can I work while my OPT application is pending?,OPT,medium
+Can I travel while OPT is pending?,OPT,medium
+What is an EAD card?,OPT,easy
+When can I start working on OPT?,OPT,easy
+Can I change employers while on OPT?,OPT,medium
+How many unemployment days are allowed on OPT?,OPT,medium
+What jobs count as employment for OPT?,OPT,medium
+Can unpaid internships count for OPT?,OPT,hard
+Can self-employment count for OPT?,OPT,hard
+Do I need to report my employer while on OPT?,OPT,medium
+How do I update my address while on OPT?,OPT,medium
+My OPT was approved but I have no job yet.  What should I do?,OPT,hard
+What is STEM OPT?,STEM_OPT,easy
+Who qualifies for STEM OPT extension?,STEM_OPT,easy
+How long is STEM OPT extension?,STEM_OPT,easy
+When should I apply for STEM OPT?,STEM_OPT,medium
+Can I apply for STEM OPT after OPT expires?,STEM_OPT,hard
+Does my employer need E-Verify for STEM OPT?,STEM_OPT,medium
+What is Form I-983?,STEM_OPT,easy
+How many unemployment days are allowed on STEM OPT?,STEM_OPT,medium
+Can I switch employers during STEM OPT?,STEM_OPT,medium
+Do I need to submit 6 month validation reports?,STEM_OPT,medium
+What happens if I miss my STEM OPT reporting deadline?,STEM_OPT,hard
+Can I travel while STEM OPT is pending?,STEM_OPT,hard
+How long is a travel signature valid on STEM OPT?,STEM_OPT,medium
+Can remote work qualify for STEM OPT?,STEM_OPT,hard
+Can I work for multiple employers on STEM OPT?,STEM_OPT,hard
+What is CPT?,CPT,easy
+Who is eligible for CPT?,CPT,easy
+Do I need a job offer before CPT?,CPT,easy
+Can I work off campus using CPT?,CPT,easy
+Can I use CPT in my first semester?,CPT,medium
+What is the difference between CPT and OPT?,CPT,easy
+Can CPT be part-time or full-time?,CPT,easy
+How many hours can I work on CPT?,CPT,medium
+How long does CPT approval take?,CPT,medium
+Can I start working before CPT is approved?,CPT,medium
+Can I do CPT during summer break?,CPT,medium
+Can remote internships use CPT?,CPT,hard
+Can I work in another state on CPT?,CPT,hard
+Can I switch employers during CPT?,CPT,medium
+Will full-time CPT affect my OPT eligibility?,CPT,hard
+Can I have two internships using CPT?,CPT,hard
+Can volunteer work count as CPT?,CPT,hard
+Can I use CPT after graduation?,CPT,hard
+My internship starts tomorrow and CPT is not approved.  what do I do?,CPT,hard
+My employer changed my start date.  do I need a new CPT I-20?,CPT,hard
+What is H-1B?,H1B,easy
+Can I apply for H-1B while on OPT?,H1B,medium
+What is the H-1B lottery?,H1B,easy
+How many times can I enter the H-1B lottery?,H1B,medium
+What is cap-gap?,H1B,medium
+Can I work after OPT expires if H-1B is pending?,H1B,hard
+When does H-1B start each year?,H1B,easy
+Can I change employers on H-1B?,H1B,medium
+Can a startup sponsor H-1B?,H1B,medium
+What documents are needed for H-1B?,H1B,medium
+If my H-1B is not selected.  can I stay on OPT?,H1B,hard
+Can STEM OPT increase my H-1B chances?,H1B,hard
+Can I travel while H-1B change of status is pending?,H1B,hard
+What happens between OPT end date and H-1B start date?,H1B,hard
+Can I apply for H-1B more than once?,H1B,medium
+Can I travel outside the US while on OPT?,TRAVEL,medium
+What documents do I need to re-enter on OPT?,TRAVEL,medium
+Can I travel during CPT?,TRAVEL,medium
+My visa expired but I have valid OPT.  can I re-enter?,TRAVEL,hard
+Do I need a travel signature while on OPT?,TRAVEL,medium
+How old can a travel signature be for re-entry?,TRAVEL,medium
+Can I renew my visa while on OPT?,TRAVEL,hard
+Can I travel while unemployed on OPT?,TRAVEL,hard
+Can I travel while STEM OPT extension is pending?,TRAVEL,hard
+What if I lose my passport while abroad on OPT?,TRAVEL,hard
+opt no job what happen,MESSY,hard
+can i work before ead comes,MESSY,medium
+h1b while on stem opt,MESSY,medium
+cpt remote internship another state okay,MESSY,hard
+lost ead card what do i do,MESSY,medium
+how many unemployment days left opt,MESSY,medium
+travel with pending opt risky,MESSY,hard
+my sevis not updated employer,MESSY,hard
+can i do unpaid internship opt,MESSY,hard
+stem opt forgot report deadline,MESSY,hard
+Can OPT be renewed forever?,ABSTAIN,hard
+Can CPT automatically become a green card?,ABSTAIN,hard
+Can I work 80 hours a week on OPT without reporting?,ABSTAIN,hard
+Does H-1B guarantee permanent residency?,ABSTAIN,hard
+Can I stay in the US forever if I get OPT?,ABSTAIN,hard
