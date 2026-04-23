@@ -6,7 +6,7 @@ from ingestion.embedder.openai_embedder import OpenAIEmbedder
 
 
 MODEL_REGISTRY = {
-    "openai_small": {
+    "openai-small": {
         "class": OpenAIEmbedder,
         "kwargs": {
             "model_name": "text-embedding-3-small"
@@ -25,6 +25,8 @@ MODEL_REGISTRY = {
         }
     }
 }
+
+MoDEL_CHOICES = list(MODEL_REGISTRY.keys())
 
 def get_embedder(name:str) -> BaseEmbedder:
     key=name.lower().strip()
