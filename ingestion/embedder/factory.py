@@ -12,13 +12,13 @@ MODEL_REGISTRY = {
             "model_name": "text-embedding-3-small"
         }
     },
-    "bg-base":{
+    "bge-base":{
         "class": LocalHFEmbedder,
         "kwargs": {
             "model_name": "BAAI/bge-base-en-v1.5"
         }
     },
-    "bg-large":{
+    "bge-large":{
         "class": LocalHFEmbedder,
         "kwargs": {
             "model_name": "BAAI/bge-large-en-v1.5"
