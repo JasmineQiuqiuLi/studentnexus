@@ -1,0 +1,51 @@
+query_id,query,category,difficulty
+1,What is OPT?,OPT,easy
+2,Who is eligible for OPT?,OPT,easy
+3,How many months of OPT can I get?,OPT,easy
+4,Can I apply for OPT before graduation?,OPT,easy
+5,Can I apply for OPT after graduation?,OPT,easy
+6,When should I apply for post-completion OPT?,OPT,medium
+7,How long does OPT approval usually take?,OPT,medium
+8,Do I need a job offer before applying for OPT?,OPT,easy
+9,Can I work while my OPT application is pending?,OPT,medium
+10,Can I travel while OPT is pending?,OPT,medium
+11,What is an EAD card?,OPT,easy
+12,When can I start working on OPT?,OPT,easy
+13,Can I change employers while on OPT?,OPT,medium
+14,How many unemployment days are allowed on OPT?,OPT,medium
+15,Can unpaid internships count for OPT?,OPT,hard
+16,What is STEM OPT?,STEM_OPT,easy
+17,Who qualifies for STEM OPT extension?,STEM_OPT,easy
+18,How long is STEM OPT extension?,STEM_OPT,easy
+19,When should I apply for STEM OPT?,STEM_OPT,medium
+20,Does my employer need E-Verify for STEM OPT?,STEM_OPT,medium
+21,What is Form I-983?,STEM_OPT,easy
+22,Can I switch employers during STEM OPT?,STEM_OPT,medium
+23,Do I need to submit 6 month validation reports?,STEM_OPT,medium
+24,Can I travel while STEM OPT is pending?,STEM_OPT,hard
+25,Can remote work qualify for STEM OPT?,STEM_OPT,hard
+26,What is CPT?,CPT,easy
+27,Who is eligible for CPT?,CPT,easy
+28,Do I need a job offer before CPT?,CPT,easy
+29,Can I work off campus using CPT?,CPT,easy
+30,Can I use CPT in my first semester?,CPT,medium
+31,What is the difference between CPT and OPT?,CPT,easy
+32,Can CPT be part-time or full-time?,CPT,easy
+33,Can I start working before CPT is approved?,CPT,medium
+34,Can I do CPT during summer break?,CPT,medium
+35,Will full-time CPT affect my OPT eligibility?,CPT,hard
+36,What is H-1B?,H1B,easy
+37,Can I apply for H-1B while on OPT?,H1B,medium
+38,What is the H-1B lottery?,H1B,easy
+39,What is cap-gap?,H1B,medium
+40,Can I work after OPT expires if H-1B is pending?,H1B,hard
+41,When does H-1B start each year?,H1B,easy
+42,Can a startup sponsor H-1B?,H1B,medium
+43,If my H-1B is not selected.  can I stay on OPT?,H1B,hard
+44,Can I travel outside the US while on OPT?,TRAVEL,medium
+45,What documents do I need to re-enter on OPT?,TRAVEL,medium
+46,My visa expired but I have valid OPT.  can I re-enter?,TRAVEL,hard
+47,Do I need a travel signature while on OPT?,TRAVEL,medium
+48,Can I renew my visa while on OPT?,TRAVEL,hard
+49,opt no job what happen,MESSY,hard
+50,can i work before ead comes,MESSY,medium

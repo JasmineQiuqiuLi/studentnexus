@@ -34,7 +34,7 @@ TOP_K = 5
 DATA_DIR = Path("data/eval")
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-QUERIES_PATH = DATA_DIR / "questions_test.csv"
+QUERIES_PATH = DATA_DIR / "questions_benchmark.csv"
 LABELS_PATH = DATA_DIR / "labels.csv"
 
 # =====================================================
