@@ -1,9 +1,17 @@
 # app/tools/annotation_ui.py
+import sys
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+sys.path.append(str(ROOT_DIR))
 
 import streamlit as st
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
+
+from app.retrieval.search_pipeline import SearchPipeline
+from ingestion.embedder.factory import get_embedder
 
 # =====================================================
 # PAGE CONFIG
@@ -12,6 +20,12 @@ st.set_page_config(
     page_title="RAG Retrieval Comparison Tool",
     layout="wide"
 )
+
+# =====================================================
+# CONFIG
+# =====================================================
+EMBED_MODEL_KEY = "openai-small"
+TOP_K = 5
 
 # =====================================================
 # PATHS
@@ -26,7 +40,9 @@ LABELS_PATH = DATA_DIR / "labels.csv"
 # LOAD QUERIES
 # =====================================================
 def load_queries():
+
     if QUERIES_PATH.exists():
+
         df = pd.read_csv(
             QUERIES_PATH,
             encoding="utf-8-sig"
@@ -52,31 +68,12 @@ def load_queries():
     ])
 
 # =====================================================
-# MOCK RETRIEVAL
-# Replace later with real retrieval pipelines
-# =====================================================
-def fake_retrieve(query, system_name):
-
-    rows = []
-
-    for i in range(1, 6):
-
-        rows.append({
-            "rank": i,
-            "chunk_id": f"{system_name[:2].upper()}_{100+i}",
-            "source": f"Source {((i-1)%3)+1}",
-            "score": round(1/(i+1), 4),
-            "chunk_text":
-                f"[{system_name}] Rank {i} result for query: {query}. "
-                f"Replace fake_retrieve() with your real pipeline."
-        })
-
-    return pd.DataFrame(rows)
-
-# =====================================================
 # SAVE LABELS
 # =====================================================
 def save_annotations(rows):
+
+    if not rows:
+        return
 
     df = pd.DataFrame(rows)
 
@@ -88,6 +85,47 @@ def save_annotations(rows):
         index=False,
         header=header
     )
+
+# =====================================================
+# CACHE
+# =====================================================
+@st.cache_resource
+def get_pipeline():
+    return SearchPipeline()
+
+@st.cache_resource
+def get_embedder_cached():
+    return get_embedder(EMBED_MODEL_KEY)
+
+# =====================================================
+# REAL RETRIEVAL
+# =====================================================
+def run_strategy(
+    query_text,
+    strategy_name,
+    top_k=TOP_K
+):
+
+    pipeline = get_pipeline()
+    embedder = get_embedder_cached()
+
+    # REAL embedding
+    query_vector = embedder.embed_query(query_text)
+
+    # REAL retrieval
+    results = pipeline.search(
+        strategy=strategy_name,
+        query_text=query_text,
+        query_vector=query_vector,
+        model_name=EMBED_MODEL_KEY,
+        top_k=top_k
+    )
+
+    # convert to DataFrame
+    if not results:
+        return pd.DataFrame()
+
+    return pd.DataFrame(results)
 
 # =====================================================
 # SESSION STATE
@@ -102,7 +140,11 @@ if "idx" not in st.session_state:
 # =====================================================
 row = queries.iloc[st.session_state.idx]
 
-query_id = row.get("query_id", st.session_state.idx + 1)
+query_id = row.get(
+    "query_id",
+    st.session_state.idx + 1
+)
+
 query = row.get("query", "")
 category = row.get("category", "")
 difficulty = row.get("difficulty", "")
@@ -112,10 +154,12 @@ difficulty = row.get("difficulty", "")
 # =====================================================
 st.title("RAG Retrieval Comparison Tool")
 
-h1, h2, h3 = st.columns([4,1,1])
+h1, h2, h3 = st.columns([5,1,1])
 
 with h1:
-    st.subheader(f"Query #{query_id}: {query}")
+    st.subheader(
+        f"Query #{query_id}: {query}"
+    )
 
 with h2:
     st.metric("Category", category)
@@ -123,26 +167,48 @@ with h2:
 with h3:
     st.metric("Difficulty", difficulty)
 
+st.caption(
+    f"Embedding Model: {EMBED_MODEL_KEY}"
+)
+
 st.markdown("---")
 
 # =====================================================
-# RUN ALL 3 SYSTEMS
+# RUN REAL SYSTEMS
 # =====================================================
-dense_df = fake_retrieve(query, "dense")
-hybrid_df = fake_retrieve(query, "hybrid")
-rerank_df = fake_retrieve(query, "hybrid_rerank")
+with st.spinner("Running dense / hybrid / rerank..."):
+
+    dense_df = run_strategy(
+        query_text=query,
+        strategy_name="dense"
+    )
+
+    hybrid_df = run_strategy(
+        query_text=query,
+        strategy_name="hybrid"
+    )
+
+    rerank_df = run_strategy(
+        query_text=query,
+        strategy_name="hybrid_rerank"
+    )
 
 # =====================================================
-# UI COLUMNS
+# LAYOUT
 # =====================================================
 col1, col2, col3 = st.columns(3)
 
 all_annotations = []
 
 # =====================================================
-# RENDER FUNCTION
+# COLUMN RENDERER
 # =====================================================
-def render_column(container, title, df, system_name):
+def render_column(
+    container,
+    title,
+    df,
+    system_name
+):
 
     global all_annotations
 
@@ -150,20 +216,60 @@ def render_column(container, title, df, system_name):
 
         st.markdown(f"## {title}")
 
-        for _, r in df.iterrows():
+        if df.empty:
+            st.warning("No results returned.")
+            return
+
+        for i, r in df.iterrows():
+
+            rank = int(r.get("rank", i + 1))
+            chunk_id = r.get("chunk_id", "")
+            doc_id = r.get("doc_id", "")
+
+            score = r.get(
+                "rerank_score",
+                r.get(
+                    "fused_score",
+                    r.get(
+                        "score",
+                        ""
+                    )
+                )
+            )
+
+            chunk_text = r.get(
+                "chunk_text",
+                "[No chunk_text found]"
+            )
+
+            metadata = r.get(
+                "metadata",
+                {}
+            )
 
             with st.container(border=True):
 
                 st.markdown(
-                    f"**Rank {int(r['rank'])}** | "
-                    f"Chunk: `{r['chunk_id']}`"
+                    f"**Rank {rank}** | "
+                    f"Chunk `{chunk_id}`"
                 )
 
                 st.caption(
-                    f"{r['source']} | Score: {r['score']}"
+                    f"Doc: {doc_id} | "
+                    f"Score: {score}"
                 )
 
-                st.write(r["chunk_text"])
+                # SHOW REAL CHUNK TEXT
+                st.text_area(
+                    "Chunk Text",
+                    value=chunk_text,
+                    height=220,
+                    key=f"text_{query_id}_{system_name}_{chunk_id}"
+                )
+
+                if metadata:
+                    with st.expander("Metadata"):
+                        st.json(metadata)
 
                 rel = st.radio(
                     "Relevance",
@@ -175,24 +281,32 @@ def render_column(container, title, df, system_name):
                         2: "Helpful",
                         3: "Direct"
                     }[x],
-                    key=f"{query_id}_{system_name}_{r['chunk_id']}"
+                    key=f"rel_{query_id}_{system_name}_{chunk_id}"
                 )
 
                 all_annotations.append({
                     "timestamp":
                         datetime.utcnow().isoformat(),
-                    "query_id": query_id,
-                    "query": query,
-                    "system": system_name,
-                    "rank": int(r["rank"]),
-                    "chunk_id": r["chunk_id"],
-                    "source": r["source"],
-                    "score": r["score"],
-                    "relevance": rel
+                    "query_id":
+                        query_id,
+                    "query":
+                        query,
+                    "system":
+                        system_name,
+                    "rank":
+                        rank,
+                    "chunk_id":
+                        chunk_id,
+                    "doc_id":
+                        doc_id,
+                    "score":
+                        score,
+                    "relevance":
+                        rel
                 })
 
 # =====================================================
-# DRAW 3 MODELS
+# DRAW 3 SYSTEMS
 # =====================================================
 render_column(
     col1,
@@ -216,7 +330,7 @@ render_column(
 )
 
 # =====================================================
-# ACTION BUTTONS
+# BUTTONS
 # =====================================================
 st.markdown("---")
 
@@ -227,8 +341,9 @@ if b1.button(
     use_container_width=True
 ):
     save_annotations(all_annotations)
+
     st.success(
-        f"Saved {len(all_annotations)} labels "
+        f"Saved {len(all_annotations)} rows "
         f"to {LABELS_PATH}"
     )
 
@@ -258,5 +373,6 @@ if b3.button(
 st.markdown("---")
 
 st.caption(
-    "Replace fake_retrieve() with real dense / hybrid / rerank pipelines."
+    "Real retrieval evaluation UI "
+    "(Dense vs Hybrid vs Hybrid+Rerank)"
 )

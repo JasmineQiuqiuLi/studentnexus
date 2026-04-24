@@ -62,7 +62,7 @@ class CohereReranker:
             original_idx=result.index
             candidate=candidates[original_idx].copy()
 
-            candidate['rerank_score']=result.score
+            candidate['rerank_score']=result.relevance_score
             candidate['rerank_rank']=rank + 1
             reranked_results.append(candidate)
         return reranked_results
@@ -86,4 +86,4 @@ class CohereReranker:
         Text: {chunk_text}
         """.strip()
     
-    
+
