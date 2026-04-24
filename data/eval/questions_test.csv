@@ -1,0 +1,11 @@
+query_id,query,category,difficulty
+0,What is OPT?,OPT,easy
+1,Who is eligible for OPT?,OPT,easy
+2,How many months of OPT can I get?,OPT,easy
+3,Can I apply for OPT before graduation?,OPT,easy
+4,Can I apply for OPT after graduation?,OPT,easy
+5,When should I apply for post-completion OPT?,OPT,medium
+6,How long does OPT approval usually take?,OPT,medium
+7,Do I need a job offer before applying for OPT?,OPT,easy
+8,Can I work while my OPT application is pending?,OPT,medium
+9,Can I travel while OPT is pending?,OPT,medium
