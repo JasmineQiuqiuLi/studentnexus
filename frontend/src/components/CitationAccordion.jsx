@@ -18,20 +18,47 @@ function CitationAccordion({ citations, messageIndex, openDocs, onToggleDoc }) {
             </div>
 
             {isOpen && (
-              <div className="doc-body">
+                <div className="doc-body">
                 <p>
-                  <strong>Chunk:</strong> {doc.chunk_text}
+                    <strong>Source Content:</strong><br />
+                    {doc.chunk_text}
                 </p>
+
                 <p>
-                  <strong>Document:</strong> {doc.doc_id}
+                    <strong>Source:</strong> {doc.title}
                 </p>
-                <p>
-                  <strong>Chunk ID:</strong> {doc.chunk_id}
-                </p>
-                <p>
-                  <strong>Rank:</strong> {doc.rank}
-                </p>
-              </div>
+
+                {doc.section && (
+                    <p>
+                    <strong>Section:</strong> {doc.section}
+                    </p>
+                )}
+
+                {doc.url && (
+                    <p>
+                    <strong>URL:</strong>{" "}
+                    <a
+                        href={doc.url}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Visit Source
+                    </a>
+                    </p>
+                )}
+
+                {doc.last_edited && (
+                    <p>
+                    <strong>Last Updated:</strong> {doc.last_edited}
+                    </p>
+                )}
+
+                {doc.retrieved && (
+                    <p>
+                    <strong>Last Retrieved:</strong> {doc.retrieved}
+                    </p>
+                )}
+                </div>
             )}
           </div>
         );

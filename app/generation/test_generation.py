@@ -31,6 +31,7 @@ def main():
             print(f"Section: {source['section']}")
             print(f"Preview: {source['chunk_text'][:150]}")
             print()
+            print(source)
 
 
 if __name__ == "__main__":

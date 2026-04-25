@@ -8,7 +8,15 @@ import { initialMessages } from "./data/fakeMessages";
 
 function App() {
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState(initialMessages);
+  const [loading, setLoading] = useState(false);
+  const [messages, setMessages] = useState([
+    {
+      role: "assistant",
+      content:
+        "Hello! I'm StudentNexus. I can help with F1, OPT, CPT, H1B, and student visa questions.\n\nTry asking:\n• When should I apply for OPT?\n• Can I work off campus?\n• What happens after graduation?",
+      citations: []
+    }
+  ]);
   const [openDocs, setOpenDocs] = useState({});
 
   const bottomRef = useRef(null);
@@ -24,18 +32,53 @@ function App() {
     }));
   };
 
-  const handleSend = () => {
-    const trimmedInput = input.trim();
-    if (!trimmedInput) return;
+const handleSend = async () => {
+  const trimmed = input.trim();
+  if (!trimmed || loading) return;
 
-    const newUserMessage = {
-      role: "user",
-      content: trimmedInput
+  const userMessage = {
+    role: "user",
+    content: trimmed
+  };
+
+  setMessages((prev) => [...prev, userMessage]);
+  setInput("");
+  setLoading(true);
+
+  try {
+    const response = await fetch("http://localhost:8000/ask", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        question: trimmed
+      })
+    });
+
+    const data = await response.json();
+
+    const assistantMessage = {
+      role: "assistant",
+      content: data.answer,
+      citations: data.sources || []
     };
 
-    setMessages((prev) => [...prev, newUserMessage]);
-    setInput("");
-  };
+    setMessages((prev) => [...prev, assistantMessage]);
+
+  } catch (error) {
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "assistant",
+        content: "Sorry, there was an error contacting StudentNexus.",
+        citations: []
+      }
+    ]);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="container">
@@ -43,7 +86,18 @@ function App() {
         <Header />
 
         <ChatWindow
-          messages={messages}
+          messages={
+            loading
+              ? [
+                  ...messages,
+                  {
+                    role: "assistant",
+                    loading: true,
+                    content: "Thinking..."
+                  }
+                ]
+              : messages
+          }
           bottomRef={bottomRef}
           openDocs={openDocs}
           onToggleDoc={toggleDoc}

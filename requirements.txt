@@ -19,3 +19,4 @@ sqlalchemy
 sentence_transformers
 cohere
 streamlit
+fastapi
