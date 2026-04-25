@@ -15,6 +15,9 @@ class GenerationPipeline:
         self.search_pipeline = SearchPipeline()
         self.llm = LLMClient()
 
+    # -----------------------------------
+    # Retrieval
+    # -----------------------------------
     def retrieve_context(
         self,
         query: str,
@@ -34,6 +37,24 @@ class GenerationPipeline:
             top_k=top_k
         )
 
+    # -----------------------------------
+    # Attach highlights to sources
+    # -----------------------------------
+    def add_highlights(
+        self,
+        sources: list,
+        highlights: dict
+    ) -> list:
+
+        for source in sources:
+            sid = str(source["source_id"])
+            source["highlights"] = highlights.get(sid, [])
+
+        return sources
+
+    # -----------------------------------
+    # Main Generation
+    # -----------------------------------
     def generate(
         self,
         query: str,
@@ -43,6 +64,7 @@ class GenerationPipeline:
         top_k: int = 5
     ):
 
+        # 1. Retrieve chunks
         chunks = self.retrieve_context(
             query=query,
             strategy=strategy,
@@ -50,28 +72,41 @@ class GenerationPipeline:
             top_k=top_k
         )
 
+        # 2. Convert to sources
         all_sources = build_sources(chunks)
 
+        # 3. Build context
         context = format_context(all_sources)
 
+        # 4. Build prompt
         prompt = build_prompt(
             query=query,
             context=context
         )
 
+        # 5. Call model
         raw_output = self.llm.call(
             prompt=prompt,
             model=llm_model
         )
 
+        # 6. Parse JSON
         parsed = self.llm.parse_json(raw_output)
 
         answer = parsed["answer"]
         used_ids = parsed["sources"]
+        highlights = parsed["highlights"]
 
+        # 7. Keep only cited sources
         final_sources = filter_sources(
             all_sources=all_sources,
             used_ids=used_ids
+        )
+
+        # 8. Add highlight spans
+        final_sources = self.add_highlights(
+            sources=final_sources,
+            highlights=highlights
         )
 
         return {

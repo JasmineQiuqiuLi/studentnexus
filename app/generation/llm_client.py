@@ -19,7 +19,10 @@ class LLMClient:
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a grounded student visa assistant."
+                    "content": (
+                        "You are a grounded student visa assistant. "
+                        "Always return clean JSON when requested."
+                    )
                 },
                 {
                     "role": "user",
@@ -31,16 +34,32 @@ class LLMClient:
         return response.choices[0].message.content.strip()
 
     def parse_json(self, raw_output: str) -> dict:
+        """
+        Safely parse structured LLM JSON output.
+        """
+
         try:
             parsed = json.loads(raw_output)
 
+            answer = parsed.get("answer", "")
+            sources = parsed.get("sources", [])
+            highlights = parsed.get("highlights", {})
+
+            if not isinstance(sources, list):
+                sources = []
+
+            if not isinstance(highlights, dict):
+                highlights = {}
+
             return {
-                "answer": parsed.get("answer", ""),
-                "sources": parsed.get("sources", [])
+                "answer": answer,
+                "sources": sources,
+                "highlights": highlights
             }
 
-        except:
+        except Exception:
             return {
                 "answer": raw_output,
-                "sources": []
+                "sources": [],
+                "highlights": {}
             }

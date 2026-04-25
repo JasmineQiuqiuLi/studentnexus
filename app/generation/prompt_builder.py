@@ -26,16 +26,27 @@ Use ONLY the provided context.
 
 Rules:
 1. If answer exists, answer clearly.
-2. If partial information exists, explain limits.
-3. If unsure, say uncertainty clearly.
+2. If partial information exists, explain limitations.
+3. If unsure, state uncertainty clearly.
 4. Do NOT invent policies.
-5. Select ONLY sources that directly support the final answer.
+5. Only cite sources directly supporting the answer.
+6. Highlights must be exact phrases copied from source content.
+7. Keep highlights short and relevant.
 
-Return ONLY valid JSON:
+Return ONLY valid JSON.
 
+Every key in "highlights" must exactly match a source listed in "sources".
+Do not include highlights for unselected sources.
+Every selected source must have at least one highlight.
+
+Format:
 {{
-  "answer": "your final answer",
-  "sources": [1,2]
+  "answer": "final answer",
+  "sources": [1,2],
+  "highlights": {{
+    "1": ["exact phrase from Source 1"],
+    "2": ["exact phrase from Source 2"]
+  }}
 }}
 
 Context:

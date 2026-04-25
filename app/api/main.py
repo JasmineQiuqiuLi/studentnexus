@@ -40,4 +40,6 @@ def ask_question(payload:AskRequest):
         top_k=payload.top_k
     )
 
+    # print(result)
+
     return result

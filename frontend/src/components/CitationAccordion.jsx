@@ -1,4 +1,11 @@
-function CitationAccordion({ citations, messageIndex, openDocs, onToggleDoc }) {
+import { highlightText } from "../utils/highlightText";
+
+function CitationAccordion({
+  citations,
+  messageIndex,
+  openDocs,
+  onToggleDoc
+}) {
   if (!citations || citations.length === 0) return null;
 
   return (
@@ -10,55 +17,71 @@ function CitationAccordion({ citations, messageIndex, openDocs, onToggleDoc }) {
         return (
           <div key={key} className="doc-item">
             <div
-            className="doc-header"
-            onClick={() => onToggleDoc(key)}
+              className="doc-header"
+              onClick={() => onToggleDoc(key)}
             >
-            <span className={isOpen ? "chevron open" : "chevron"}></span>
-            <span>{doc.title}</span>
+              <span
+                className={
+                  isOpen ? "chevron open" : "chevron"
+                }
+              ></span>
+
+              <span>{doc.title}</span>
             </div>
 
             {isOpen && (
-                <div className="doc-body">
+              <div className="doc-body">
                 <p>
-                    <strong>Source Content:</strong><br />
-                    {doc.chunk_text}
+                  <strong>Source Content:</strong>
+                  <br />
+
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: highlightText(
+                        doc.chunk_text,
+                        doc.highlights || []
+                      )
+                    }}
+                  />
                 </p>
 
                 <p>
-                    <strong>Source:</strong> {doc.title}
+                  <strong>Source:</strong> {doc.title}
                 </p>
 
                 {doc.section && (
-                    <p>
+                  <p>
                     <strong>Section:</strong> {doc.section}
-                    </p>
+                  </p>
                 )}
 
                 {doc.url && (
-                    <p>
+                  <p>
                     <strong>URL:</strong>{" "}
                     <a
-                        href={doc.url}
-                        target="_blank"
-                        rel="noreferrer"
+                      href={doc.url}
+                      target="_blank"
+                      rel="noreferrer"
                     >
-                        Visit Source
+                      Visit Source
                     </a>
-                    </p>
+                  </p>
                 )}
 
                 {doc.last_edited && (
-                    <p>
-                    <strong>Last Updated:</strong> {doc.last_edited}
-                    </p>
+                  <p>
+                    <strong>Last Updated:</strong>{" "}
+                    {doc.last_edited}
+                  </p>
                 )}
 
                 {doc.retrieved && (
-                    <p>
-                    <strong>Last Retrieved:</strong> {doc.retrieved}
-                    </p>
+                  <p>
+                    <strong>Last Retrieved:</strong>{" "}
+                    {doc.retrieved}
+                  </p>
                 )}
-                </div>
+              </div>
             )}
           </div>
         );
