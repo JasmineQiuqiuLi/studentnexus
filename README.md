@@ -74,7 +74,7 @@ Bot:   You may apply up to 90 days before your program end date
 │       │          │                           │
 │  ┌────▼──┐  ┌───▼────┐  ┌────────────────┐   │
 │  │Dense  │  │Sparse  │  │ Cohere Reranker│   │
-│  │vector │  │BM25/FTS│  │  (stage 2)     │   │
+│  │vector │  │BM25/FTS│  │                │   │
 │  └───┬───┘  └───┬────┘  └────────────────┘   │
 │      │          │  RRF fusion                │
 │  ┌───▼──────────▼───────────────────────┐    │
@@ -283,7 +283,7 @@ python -m ingestion.ingestion --stage store_embeddings --model_name openai-small
 
 **Flow:** Downloader → HTML→Markdown extraction → Text cleaning → Semantic chunking → Embedding → pgvector
 
-Each chunk stores: `text`, `title`, `section`, `source_url`, `last_edited`, `token_count`
+Each chunk stores: `text`, `title`, `section`, `source_url`, `last_edited`, `last_retrieved`, etc.
 
 ---
 
