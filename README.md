@@ -36,6 +36,8 @@ Bot:   You may apply up to 90 days before your program end date
          "Students may file the Form I-765 up to 90 days before..."
          🔗 uscis.gov  ·  Last updated: 2024-01-15
 ```
+[![Watch the demo]](https://www.youtube.com/watch?v=3drQKqN4Ce8)
+[![Watch the demo](assets/demo-thumbnail.png)](https://www.youtube.com/watch?v=3drQKqN4Ce8)
 
 ---
 
@@ -53,33 +55,33 @@ Bot:   You may apply up to 90 days before your program end date
 
 ```
 ┌──────────────────────────────────────────────┐
-│           React Frontend  (port 5173)         │
-│  App.jsx · ChatWindow · CitationAccordion     │
+│           React Frontend  (port 5173)        │
+│  App.jsx · ChatWindow · CitationAccordion    │
 └───────────────────┬──────────────────────────┘
                     │  POST /ask
 ┌───────────────────▼──────────────────────────┐
-│           FastAPI Backend  (port 8000)        │
-│                                               │
+│           FastAPI Backend  (port 8000)       │
+│                                              │
 │  ┌────────────────────────────────────────┐  │
 │  │         GenerationPipeline             │  │
 │  │  retrieve_context() → generate()       │  │
 │  └──────────────┬─────────────────────────┘  │
-│                 │                             │
+│                 │                            │
 │    ┌────────────▼──────────────┐             │
 │    │       SearchPipeline      │             │
 │    │  dense | hybrid | rerank  │             │
 │    └──┬──────────┬─────────────┘             │
-│       │          │                            │
-│  ┌────▼──┐  ┌───▼────┐  ┌────────────────┐  │
-│  │Dense  │  │Sparse  │  │ Cohere Reranker │  │
-│  │vector │  │BM25/FTS│  │  (stage 2)     │  │
-│  └───┬───┘  └───┬────┘  └────────────────┘  │
-│      │          │  RRF fusion                 │
+│       │          │                           │
+│  ┌────▼──┐  ┌───▼────┐  ┌────────────────┐   │
+│  │Dense  │  │Sparse  │  │ Cohere Reranker│   │
+│  │vector │  │BM25/FTS│  │  (stage 2)     │   │
+│  └───┬───┘  └───┬────┘  └────────────────┘   │
+│      │          │  RRF fusion                │
 │  ┌───▼──────────▼───────────────────────┐    │
 │  │   PostgreSQL + pgvector (Supabase)   │    │
 │  │  chunks · embeddings · tsvector FTS  │    │
 │  └──────────────────────────────────────┘    │
-│                                               │
+│                                              │
 │  ┌────────────────────────────────────────┐  │
 │  │           LLMClient (OpenAI)           │  │
 │  │  GPT-4o-mini · JSON output · citation  │  │
@@ -227,7 +229,8 @@ Submit a question and receive a grounded answer with cited sources.
       "section": "Eligibility",
       "chunk_text": "Students may file Form I-765 up to 90 days before...",
       "url": "https://uscis.gov/...",
-      "last_edited": "2024-01-15"
+      "last_edited": "2024-01-15",
+      "highlights": ["up to 90 days before", "no later than 60 days after"]
     }
   ]
 }
@@ -253,10 +256,15 @@ RRF formula: `score = Σ 1 / (k + rank)` across methods (k=60), combining semant
 
 ### Grounded Generation
 
-1. Retrieved chunks are formatted with `[source_id]` tags
-2. GPT-4o-mini is prompted to return structured JSON: `{"answer": "...", "source_ids": [1, 3]}`
-3. Only chunks whose IDs appear in `source_ids` are included in the response
-4. Fallback: if JSON parsing fails, the raw answer is returned without citations
+1. Retrieved chunks are formatted with `[source_id]` tags and passed as context
+2. GPT-4o-mini returns structured JSON with three fields:
+   ```json
+   { "answer": "...", "sources": [1, 3], "highlights": {"1": ["exact phrase..."], "3": ["..."]} }
+   ```
+3. Only chunks whose IDs appear in `sources` are included in the response
+4. **Highlights** — the LLM selects exact phrases from each cited chunk; every cited source must have at least one highlight, and phrases must be copied verbatim from the source content
+5. Highlights are attached to each source object and can be used by the frontend to visually mark the relevant passage in the citation panel
+6. Fallback: if JSON parsing fails, the raw answer is returned with empty sources and highlights
 
 ---
 
